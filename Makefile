@@ -6,6 +6,11 @@ help:
 	@echo
 	@echo "repl:    	debug using bpython"
 	@echo
+	@echo "🛣 APP"
+	@echo
+	@echo "start:     	start app"
+	@echo "index:     	route - index"
+	@echo
 	@echo "📊 CODE QUALITY"
 	@echo
 	@echo "cov:     	view HTML coverage report in browser"
@@ -20,6 +25,12 @@ help:
 	@echo "install:   	install dependencies from requirements.txt"
 	@echo "reset:   	remove any installed pkg *not* in requirements.txt"
 	@echo
+
+start:
+	python3 helloworld.py
+
+r-index:
+	qiu -po 5000 -pa index
 
 cov:test
 	coverage html; open htmlcov/index.html
