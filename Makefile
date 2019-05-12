@@ -2,21 +2,21 @@
 
 help:
 	@echo
-	@echo "🐛 DEBUG"
+	@echo "🛣  APP"
 	@echo
-	@echo "repl:    	debug using bpython"
-	@echo
-	@echo "🛣 APP"
-	@echo
-	@echo "start:     	start app"
 	@echo "index:     	route - index"
+	@echo "start:     	start app"
 	@echo
-	@echo "📊 CODE QUALITY"
+	@echo "🛠  TOOLING"
 	@echo
-	@echo "cov:     	view HTML coverage report in browser"
 	@echo "fmt:     	auto format code using Black"
 	@echo "lint:    	lint using flake8"
+	@echo "repl:    	debug using bpython"
 	@echo "secure:  	security check using Bandit"
+	@echo
+	@echo "📊 TESTING"
+	@echo
+	@echo "cov:     	view HTML coverage report in browser"
 	@echo "test:    	run unit tests, view basic coverage report in terminal"
 	@echo
 	@echo "📦 DEPENDENCIES"
@@ -29,7 +29,7 @@ help:
 start:
 	python3 helloworld.py
 
-r-index:
+index:
 	qiu -po 5000 -pa index
 
 cov:test
