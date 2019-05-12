@@ -44,7 +44,7 @@ cov:test
 	coverage html; open htmlcov/index.html
 
 fmt:
-	black src test
+	black src test helloworld.py
 
 lint:
 	flake8 src
