@@ -4,8 +4,9 @@ help:
 	@echo
 	@echo "🛣  APP"
 	@echo
-	@echo "index:     	route - index"
 	@echo "start:     	start app"
+	@echo "routes:     	list all routes"
+	@echo "index:     	route - index"
 	@echo
 	@echo "🛠  TOOLING"
 	@echo
@@ -25,6 +26,9 @@ help:
 	@echo "install:   	install dependencies from requirements.txt"
 	@echo "reset:   	remove any installed pkg *not* in requirements.txt"
 	@echo
+
+routes:
+	python3 -c "from helloworld import app; import pprint; pp = pprint.PrettyPrinter(indent=4); pp.pprint(app.url_map._rules)"
 
 start:
 	python3 helloworld.py
