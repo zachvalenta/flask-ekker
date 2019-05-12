@@ -29,10 +29,10 @@ help:
 	@echo
 
 routes:
-	python3 -c "from helloworld import app; import pprint; pp = pprint.PrettyPrinter(indent=4); pp.pprint(app.url_map._rules[1:])"
+	python3 -c "from application import app; import pprint; pp = pprint.PrettyPrinter(indent=4); pp.pprint(app.url_map._rules[1:])"
 
 start:
-	python3 helloworld.py
+	python3 application.py
 
 index:
 	qiu -po 5000 -pa index
