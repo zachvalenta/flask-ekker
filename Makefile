@@ -35,7 +35,7 @@ start:
 	source venv/bin/activate; export FLASK_APP=application; export FLASK_ENV=development; flask run
 
 index:
-	qiu -po 5000 -pa index
+	qiu -po 5000
 
 clouds:
 	qiu -po 5000 -pa static/clouds.jpeg
@@ -44,7 +44,7 @@ cov:test
 	coverage html; open htmlcov/index.html
 
 fmt:
-	black src test helloworld.py
+	black src test application.py
 
 lint:
 	flake8 src
