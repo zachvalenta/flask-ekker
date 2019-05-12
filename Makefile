@@ -7,6 +7,7 @@ help:
 	@echo "start:     	start app"
 	@echo "routes:     	list all routes"
 	@echo "index:     	route - index"
+	@echo "clouds:     	route - clouds image"
 	@echo
 	@echo "🛠  TOOLING"
 	@echo
@@ -35,6 +36,9 @@ start:
 
 index:
 	qiu -po 5000 -pa index
+
+clouds:
+	qiu -po 5000 -pa static/clouds.jpeg
 
 cov:test
 	coverage html; open htmlcov/index.html
