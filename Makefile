@@ -4,7 +4,7 @@ help:
 	@echo
 	@echo "🛣  APP"
 	@echo
-	@echo "start:     	start app"
+	@echo "run:     	start app"
 	@echo "routes:     	list all routes"
 	@echo "index:     	route - index"
 	@echo "clouds:     	route - clouds image"
@@ -28,11 +28,11 @@ help:
 	@echo "reset:   	remove any installed pkg *not* in requirements.txt"
 	@echo
 
+run:
+	source venv/bin/activate; export FLASK_APP=application; export FLASK_ENV=development; flask run
+
 routes:
 	python3 -c "from application import app; import pprint; pp = pprint.PrettyPrinter(indent=4); pp.pprint(app.url_map._rules[1:])"
-
-start:
-	source venv/bin/activate; export FLASK_APP=application; export FLASK_ENV=development; flask run
 
 index:
 	qiu -po 5000
