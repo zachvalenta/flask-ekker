@@ -37,6 +37,9 @@ routes:
 index:
 	qiu -po 5000
 
+add:
+	qiu -po 5000 -pa add
+
 clouds:
 	qiu -po 5000 -pa static/clouds.jpeg
 
