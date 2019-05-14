@@ -37,6 +37,9 @@ routes:
 index:
 	qiu -po 5000
 
+404:
+	qiu -po 5000 -pa foo
+
 add:
 	qiu -po 5000 -pa add
 
