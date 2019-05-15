@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from loguru import logger
 
 app = Flask(__name__)
 
@@ -19,6 +20,8 @@ def index():
     )
 
 
-@app.route("/add")
+@app.route("/add", methods=["GET", "POST"])
 def add():
+    if request.method == "POST":
+        logger.debug(request.form['dummy_form'])
     return render_template("add.html")
