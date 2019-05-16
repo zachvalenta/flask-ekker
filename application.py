@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from loguru import logger
 
 app = Flask(__name__)
@@ -24,4 +24,5 @@ def index():
 def add():
     if request.method == "POST":
         logger.debug(request.form['dummy_form'])
+        return redirect(url_for('index'))
     return render_template("add.html")
