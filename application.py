@@ -1,7 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for
+import os
+
+from dotenv import find_dotenv, load_dotenv
+from flask import Flask, render_template, request, redirect, url_for, flash
 from loguru import logger
 
 app = Flask(__name__)
+load_dotenv(find_dotenv())
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY").encode()
 
 
 @app.errorhandler(404)
@@ -24,5 +29,6 @@ def index():
 def add():
     if request.method == "POST":
         logger.debug(request.form['dummy_form'])
+        flash(request.form['dummy_form'])
         return redirect(url_for('index'))
     return render_template("add.html")
