@@ -53,7 +53,7 @@ fmt:
 	black src test application.py
 
 lint:
-	flake8 src
+	flake8 src application.py
 
 freeze:
 	pip freeze > requirements.txt
