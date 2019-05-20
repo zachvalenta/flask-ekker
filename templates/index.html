@@ -7,4 +7,12 @@
     <p> {{ paragraph[0] }}</p>
     <p> {{ paragraph[1] }}</p>
     <p><a href="{{ url_for('add') }}">add page</a></p>
+    <div>
+        {% if marks %}
+        <h3>newly added</h3>
+            {% for mark in marks %}
+            <ul>{{ mark.input }}</ul>
+            {% endfor %}
+        {% endif %}
+    </div>
 {% endblock %}
