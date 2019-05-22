@@ -4,10 +4,14 @@ import os
 from dotenv import find_dotenv, load_dotenv
 from flask import Flask, render_template, request, redirect, url_for, flash
 from loguru import logger
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 load_dotenv(find_dotenv())
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY").encode()
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, 'local.db')
+db = SQLAlchemy(app)
 bookmarks = []
 
 
