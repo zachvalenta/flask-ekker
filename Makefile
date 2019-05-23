@@ -7,7 +7,9 @@ help:
 	@echo "run:     	start app"
 	@echo "routes:     	list all routes"
 	@echo "index:     	route - index"
-	@echo "clouds:     	route - clouds image"
+	@echo "clouds:     	route - static asset"
+	@echo "404:     	route - error page"
+	@echo "add:     	route - form page"
 	@echo
 	@echo "🛠  TOOLING"
 	@echo
@@ -15,11 +17,6 @@ help:
 	@echo "lint:    	lint using flake8"
 	@echo "repl:    	debug using bpython"
 	@echo "secure:  	security check using Bandit"
-	@echo
-	@echo "📊 TESTING"
-	@echo
-	@echo "cov:     	view HTML coverage report in browser"
-	@echo "test:    	run unit tests, view basic coverage report in terminal"
 	@echo
 	@echo "📦 DEPENDENCIES"
 	@echo
@@ -37,20 +34,23 @@ routes:
 index:
 	qiu -po 5000
 
+clouds:
+	qiu -po 5000 -pa static/clouds.jpeg
+
 404:
 	qiu -po 5000 -pa foo
 
 add:
 	qiu -po 5000 -pa add
 
-clouds:
-	qiu -po 5000 -pa static/clouds.jpeg
-
-cov:test
-	coverage html; open htmlcov/index.html
-
 fmt:
 	black src test application.py
+
+repl:
+	bpython
+
+secure:
+	bandit -r src
 
 lint:
 	flake8 src application.py
@@ -76,12 +76,3 @@ reset:
 	@echo
 	rm pkgs-to-rm.txt
 	@echo
-
-repl:
-	bpython
-
-secure:
-	bandit -r src
-
-test:
-	coverage run --source='src' -m pytest -v && coverage report -m
