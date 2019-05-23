@@ -11,6 +11,7 @@ load_dotenv(find_dotenv())
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY").encode()
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, 'local.db')
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 bookmarks = []
 
