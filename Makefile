@@ -10,6 +10,7 @@ help:
 	@echo "clouds:     	route - static asset"
 	@echo "404:     	route - error page"
 	@echo "add:     	route - form page"
+	@echo "seed:     	open repl w/ database seeded"
 	@echo
 	@echo "🛠  TOOLING"
 	@echo
@@ -24,6 +25,9 @@ help:
 	@echo "install:   	install dependencies from requirements.txt"
 	@echo "reset:   	remove any installed pkg *not* in requirements.txt"
 	@echo
+
+seed:
+	qing local.db; source venv/bin/activate; bpython -i db-shell.py
 
 run:
 	source venv/bin/activate; export FLASK_APP=application; export FLASK_ENV=development; flask run
