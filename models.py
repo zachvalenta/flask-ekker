@@ -16,4 +16,4 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '{!r}'.format(self.username)
