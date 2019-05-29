@@ -7,13 +7,16 @@ from loguru import logger
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+# session
 load_dotenv(find_dotenv())
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY").encode()
+# db
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, 'local.db')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 bookmarks = []
+import models # idky this works but `from models import Input` is circular
 
 
 def store_bookmark(input):
@@ -50,5 +53,7 @@ def add():
         logger.debug("form input -> {}".format(form_input))
         flash(form_input)  # store flash in session obj
         store_bookmark(form_input)
+        db.session.add(models.Input(text=form_input))
+        db.session.commit()
         return redirect(url_for("index"))
     return render_template("add.html")
