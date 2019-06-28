@@ -16,3 +16,6 @@ htmlcov
 
 # virtualenv
 venv
+
+# pytest
+.pytest_cache
