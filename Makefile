@@ -2,9 +2,9 @@
 
 help:
 	@echo
-	@echo "🛣  APP"
+	@echo "🍶  FLASK"
 	@echo
-	@echo "run:     	start app"
+	@echo "flask:     	start app"
 	@echo "routes:     	list all routes"
 	@echo "index:     	route - index"
 	@echo "clouds:     	route - static asset"
@@ -29,8 +29,8 @@ help:
 seed:
 	qing local.db; source venv/bin/activate; bpython -i db-shell.py
 
-run:
-	source venv/bin/activate; export FLASK_APP=application; export FLASK_ENV=development; flask run
+flask:
+	source venv/bin/activate; flask run
 
 routes:
 	python3 -c "from application import app; import pprint; pp = pprint.PrettyPrinter(indent=4); pp.pprint(app.url_map._rules[1:])"
