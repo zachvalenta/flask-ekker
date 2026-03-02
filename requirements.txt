@@ -46,4 +46,4 @@ toml==0.10.0
 typing==3.6.6
 urllib3==2.6.3
 wcwidth==0.1.7
-Werkzeug==3.1.5
+Werkzeug==3.1.6
