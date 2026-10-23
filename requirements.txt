@@ -7,7 +7,7 @@ better-exceptions-fork==0.2.1.post6
 black==26.3.1
 blessings==1.7
 bpython==0.17.1
-certifi==2024.7.4
+certifi==2026.10.19
 chardet==3.0.4
 Click==7.0
 colorama==0.4.1
